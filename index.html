@@ -1,65 +1,398 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            The Aerospace Organization
-        </title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="common">
-    <p class="underlinebottom">The Relay Programming Company</p>
-        </div>
-        <br>
-        <em> Pity not your five.</em>
-        <br><br>
-        <p class="headings">Flood 1 Relay Programming</p>
-        <pre style="font-size: 30px;">
-            <i><h3 style="margin: 0%; text-align: center;">Relay Programming Stages <em>(Waves)</em> in flood 1</h3></i>
-            <table style="border-style: solid; margin: 0%; border-color: black; margin: 0px 0px 0px 380px;">
-            <tr>
-                <td>Wave 1            </td>
-                <td>Wave 2            </td>
-                <td>Wave 3            </td>
-            </tr>
-        </table>
-        <ol style="margin: 0px 0px 0px 50px;">
-            <li>Electrical Components and their symbols.<sub>Wave 1...</sub></li>
-            <ul class="ulist">
-                <li>Battery</li>
-                <li>Switch and Button</li>
-                <li>Bulb and LED's</li>
-                <li>Connecting cables</li>
-                <li>Capacitors</li>
-                <li>Diodes</li>
-                <li>Resistors</li>
-                <li>Electromagnetic Relay</li>
-                <li>Transformers</li>
-            </ul>
-            <li style="margin: 1px;">Working of Electrical Components.<sub> Wave 2...</sub></li>
-            <ul class="ulist1"><li>You are required to ditermine how the above
-electrical components function, and be able
-to draw simple electronic circuits using
-these components.</li></ul>
-            <li>The Relationship between the components and a relay <sub>Wave 3...</sub><li> <br>Understanding the relay. <sub>Types of relays and how they work</sub>
-                <ul class="ulist1"><li>There are various ways in which all these
-electrical components relate to each other
-and more so, to an electronic relay.
-It is important for the flood 1 relay
- programmer to learn how to interconnect
-various items in their circuits e.g. diodes,
-capacitors and transformers without IC's</li></ul>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relay Programming - Unlock Your Critical Mind</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-                <br>
-        </ol>
-        <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><h1><INS>Relay Task</h1></ins></i><p><h5><i style="text-align: center;">(The relay programming learner is expected to carry out the following task which will tell whether the programmer <br> proceeds to the next programming stage or not. In addition he/she is supposed to have solved all the tasks he/she had <br> been issued with by his/her trainer. Upon completion of the following task, he/she is supposed to return the <br> completed circuit to his/her trainer who will determine whether the circuit contains errors or not. If not <br> the learner shall have qualified to proceed to the next programming stage i.e. Flood2.)<hr></i><h2 style=" text-decoration: underline;text-decoration-style: wavy;">
-Task</h2>Develop a well-designed circuit for a device that has the following capabilities: Has a button for switching on its beam <br>light and another button b for switching on the flood light. Has button c for switching on the propeller and finally <br>button d for switching off anything on. (All the buttons should be single tap). The device is rechargeable and has LED’s <br>to indicate that it is charging. Upon pressing button d to switch off anything that is on, the lights should first delay <br>then shrink off. This device is 12volts DC operated; the LED indicators are 5volts DC operated and the lights and the <br>propeller are also 12volts DC operated.
-<HR></HR></p>
-        </p>
-<button class="button">Say Halo</button>
-        </pre>
-           </body>
-           <footer>
-            <h4>Talk to Rick Deazer the Developer on <a href="https://www.facebook.com/profile.php?id=100080255026452" target="_blank" style="text-decoration-line: none;">facebook</a> or <a href="http://127.0.0.1:5500/My html code.html" target="_blank" style="text-decoration-line: none;">instagram.</a></h4>
-        </footer>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: #00ffff;
+            font-size: 18px;
+            margin: 0 20px;
+            padding: 10px;
+            cursor: pointer;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00ffff;
+            transition: width 0.3s;
+        }
+
+        nav button:hover::after,
+        nav button.active::after {
+            width: 100%;
+        }
+
+        nav button:hover,
+        nav button.active {
+            color: #ffffff;
+        }
+
+        /* Mobile Nav Adjustments */
+        @media (max-width: 768px) {
+            nav button {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 120px 20px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.9));
+            z-index: -1;
+        }
+
+        /* Wave Background */
+        .wave-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 120px;
+            background: linear-gradient(90deg, #00eeee 0%, #00cccc 50%, #00eeee 100%);
+            opacity: 0.3;
+            animation: wave 15s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Background Images */
+        #home { background: url('https://source.unsplash.com/random/1920x1080/?circuit,neon') no-repeat center/cover; }
+        #about { background: url('https://source.unsplash.com/random/1920x1080/?brain,intelligence') no-repeat center/cover; }
+        #floods { background: url('https://source.unsplash.com/random/1920x1080/?wave,ocean,blue') no-repeat center/cover; }
+        #enroll { background: url('https://source.unsplash.com/random/1920x1080/?future,tech,cyber') no-repeat center/cover; }
+        #contact { background: url('https://source.unsplash.com/random/1920x1080/?network,connect') no-repeat center/cover; }
+
+        h1, h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px #00ffff;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 8px #00ffff; }
+            to { text-shadow: 0 0 25px #00ffff, 0 0 35px #00ffff; }
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .cta-button {
+            background: #00ffff;
+            color: #000000;
+            padding: 16px 36px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 6px 15px rgba(0, 255, 255, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px #00ffff;
+        }
+
+        /* Floods Section */
+        .flood-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .flood-card {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            transition: transform 0.4s;
+        }
+
+        .flood-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .flood-card h3 {
+            color: #00ffff;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .flood-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .flood-card li {
+            margin: 15px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .flood-card li::before {
+            content: "▸";
+            color: #00ffff;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 1024px) {
+            h1, h2 { font-size: 42px; }
+            p { font-size: 18px; }
+            .cta-button { padding: 14px 30px; font-size: 18px; }
+        }
+
+        @media (max-width: 768px) {
+            h1, h2 { font-size: 36px; }
+            p { font-size: 17px; max-width: 95%; }
+            .cta-button { padding: 14px 28px; font-size: 18px; }
+
+            .flood-list {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 0 15px;
+            }
+
+            .flood-card {
+                padding: 25px;
+            }
+
+            .flood-card h3 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav button {
+                font-size: 14px;
+                margin: 0 8px;
+                padding: 8px;
+            }
+
+            h1, h2 { font-size: 32px; }
+            section { padding: 100px 15px 80px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button onclick="scrollToSection('home')">Home</button>
+        <button onclick="scrollToSection('about')">About</button>
+        <button onclick="scrollToSection('floods')">Floods</button>
+        <button onclick="scrollToSection('enroll')">Enroll</button>
+        <button onclick="scrollToSection('contact')">Contact</button>
+    </nav>
+
+    <section id="home">
+        <div class="wave-bg"></div>
+        <h1>Welcome to Relay Programming</h1>
+        <p>Discover the revolutionary way to program electronic circuits using just a pen and paper – no integrated circuits needed!</p>
+        <p>Founded by Rick Deazer, CEO of The Relay Programming Company. Master critical thinking and unlock high intelligence.</p>
+        <button class="cta-button" onclick="scrollToSection('enroll')">Start Your Journey Today!</button>
+    </section>
+
+    <section id="about">
+        <div class="wave-bg"></div>
+        <h2>About Relay Programming</h2>
+        <p>Rick Deazer pioneered this unique method that teaches students to think deeply and critically through hand-drawn relay logic circuits.</p>
+        <p>Progress through 7 powerful Floods, each containing 3 transformative Waves – from beginner to expert mastery.</p>
+        <button class="cta-button" onclick="scrollToSection('floods')">Explore the 7 Floods</button>
+    </section>
+
+    <section id="floods">
+        <div class="wave-bg"></div>
+        <h2>The 7 Floods of Mastery</h2>
+        <p>Each Flood builds your skills progressively with 3 Waves of deep learning and practical challenges.</p>
+        <div class="flood-list">
+            <div class="flood-card">
+                <h3>Flood 1: Beginner Basics</h3>
+                <ul>
+                    <li>Wave 1: Introduction to Relays</li>
+                    <li>Wave 2: Simple Circuit Sketching</li>
+                    <li>Wave 3: Basic Logic Gates</li>
+                </ul>
+            </div>
+            <div class="flood-card">
+                <h3>Flood 2: Intermediate Circuits</h3>
+                <ul>
+                    <li>Wave 1: Sequential Logic</li>
+                    <li>Wave 2: Flip-Flops on Paper</li>
+                    <li>Wave 3: Counters & Registers</li>
+                </ul>
+            </div>
+            <div class="flood-card">
+                <h3>Flood 3: Advanced Designs</h3>
+                <ul>
+                    <li>Wave 1: State Machines</li>
+                    <li>Wave 2: Finite Automata</li>
+                    <li>Wave 3: Optimization Techniques</li>
+                </ul>
+            </div>
+            <div class="flood-card">
+                <h3>Flood 4: Real-World Applications</h3>
+                <ul>
+                    <li>Wave 1: Control Systems</li>
+                    <li>Wave 2: Automation Projects</li>
+                    <li>Wave 3: Troubleshooting</li>
+                </ul>
+            </div>
+            <div class="flood-card">
+                <h3>Flood 5: Innovative Thinking</h3>
+                <ul>
+                    <li>Wave 1: Creative Circuitry</li>
+                    <li>Wave 2: Hybrid Designs</li>
+                    <li>Wave 3: Invention Challenges</li>
+                </ul>
+            </div>
+            <div class="flood-card">
+                <h3>Flood 6: Mastery Level</h3>
+                <ul>
+                    <li>Wave 1: Complex Simulations</li>
+                    <li>Wave 2: Paper-to-Prototype</li>
+                    <li>Wave 3: Teaching Others</li>
+                </ul>
+            </div>
+            <div class="flood-card">
+                <h3>Flood 7: Expert Innovation</h3>
+                <ul>
+                    <li>Wave 1: Cutting-Edge Research</li>
+                    <li>Wave 2: Collaborative Projects</li>
+                    <li>Wave 3: Global Impact</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="enroll">
+        <div class="wave-bg"></div>
+        <h2>Enroll in Relay Programming Today!</h2>
+        <p>Join thousands transforming their minds through pure logic and critical thinking.</p>
+        <p>Begin with Flood 1 and rise to mastery – one wave at a time.</p>
+        <button class="cta-button">Sign Up Now</button>
+        <p style="margin-top: 40px; font-style: italic;">"Think deeper. Design smarter. Become unstoppable."</p>
+    </section>
+
+<section id="contact">
+    <div class="wave-bg"></div>
+    <h2>Contact Rick Deazer</h2>
+    <p>Reach out directly for inquiries, enrollment, or to learn more about Relay Programming.</p>
+    
+    <p><strong>Email:</strong> <a href="mailto:deazerrick@gmail.com" style="color: #00ffff; text-decoration: none;">deazerrick@gmail.com</a></p>
+    
+    <p><strong>Phone:</strong> 
+        <a href="tel:+27768229333" style="color: #00ffff; text-decoration: none;">076 822 9333</a>
+    </p>
+    
+    <p><strong>WhatsApp:</strong> 
+        <a href="https://wa.me/2784843808" style="color: #00ffff; text-decoration: none;">078 484 3808</a>
+    </p>
+    
+    <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 20px; align-items: center;">
+        <button class="cta-button" onclick="window.location.href='mailto:deazerrick@gmail.com'">Send Email</button>
+        
+        <button class="cta-button" onclick="window.location.href='tel:+27768229333'">Call Now</button>
+        
+        <button class="cta-button" onclick="window.location.href='https://wa.me/2784843808'">Message on WhatsApp</button>
+    </div>
+</section>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Highlight active navigation button
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navButtons = document.querySelectorAll('nav button');
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick').includes(current)) {
+                    btn.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
