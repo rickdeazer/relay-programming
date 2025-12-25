@@ -206,6 +206,27 @@
             left: 0;
         }
 
+        /* Read More Styles */
+        .read-more-content {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: #00ffff;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 15px;
+            text-decoration: underline;
+        }
+
+        .read-more-btn:hover {
+            color: #ffffff;
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 1024px) {
             h1, h2 { font-size: 42px; }
@@ -276,12 +297,28 @@
         <p>Each Flood builds your skills progressively with 3 Waves of deep learning and practical challenges.</p>
         <div class="flood-list">
             <div class="flood-card">
-                <h3>Flood 1: Beginner Basics</h3>
+                <h3>Flood 1: Relay Programming</h3>
                 <ul>
-                    <li>Wave 1: Introduction to Relays</li>
-                    <li>Wave 2: Simple Circuit Sketching</li>
-                    <li>Wave 3: Basic Logic Gates</li>
+                    <li>Wave 1: Electrical Components and their symbols</li>
+                    <li>Wave 2: Working of Electrical Components</li>
+                    <li>Wave 3: The Relationship between the components and a relay. Types of relays and how they work</li>
                 </ul>
+                <button class="read-more-btn" onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block') ? 'none' : 'block'; this.innerText = (this.innerText === 'Read More') ? 'Read Less' : 'Read More';">Read More</button>
+                <div class="read-more-content">
+                    <p><strong>Wave 1 Details:</strong> Battery, Switch and Button, Bulb and LED's, Connecting cables, Capacitors, Diodes, Resistors, Electromagnetic Relay, Transformers</p>
+                    <p><strong>Wave 2 Details:</strong> Determine how the above electrical components function, and be able to draw simple electronic circuits using these components (no ICs).</p>
+                    <p><strong>Wave 3 Details:</strong> Learn how various electrical components relate to each other and especially to an electronic relay. Master interconnecting items like diodes, capacitors, and transformers without ICs.</p>
+                    <p><strong>Relay Task (to proceed to Flood 2):</strong></p>
+                    <p>Develop a well-designed circuit for a device that has the following capabilities:</p>
+                    <ul>
+                        <li>Button A: Switch on beam light</li>
+                        <li>Button B: Switch on flood light</li>
+                        <li>Button C: Switch on propeller</li>
+                        <li>Button D: Switch off anything on (single tap)</li>
+                    </ul>
+                    <p>All buttons single tap. The device is rechargeable with LED indicators for charging. Upon pressing Button D, lights delay then gradually shrink off. Device: 12V DC operated; LEDs: 5V DC; lights and propeller: 12V DC.</p>
+                    <p>The trainer will review your completed circuit for errors before approving progression to Flood 2.</p>
+                </div>
             </div>
             <div class="flood-card">
                 <h3>Flood 2: Intermediate Circuits</h3>
@@ -343,29 +380,19 @@
         <p style="margin-top: 40px; font-style: italic;">"Think deeper. Design smarter. Become unstoppable."</p>
     </section>
 
-<section id="contact">
-    <div class="wave-bg"></div>
-    <h2>Contact Rick Deazer</h2>
-    <p>Reach out directly for inquiries, enrollment, or to learn more about Relay Programming.</p>
-    
-    <p><strong>Email:</strong> <a href="mailto:deazerrick@gmail.com" style="color: #00ffff; text-decoration: none;">deazerrick@gmail.com</a></p>
-    
-    <p><strong>Phone:</strong> 
-        <a href="tel:+27768229333" style="color: #00ffff; text-decoration: none;">076 822 9333</a>
-    </p>
-    
-    <p><strong>WhatsApp:</strong> 
-        <a href="https://wa.me/2784843808" style="color: #00ffff; text-decoration: none;">078 484 3808</a>
-    </p>
-    
-    <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 20px; align-items: center;">
-        <button class="cta-button" onclick="window.location.href='mailto:deazerrick@gmail.com'">Send Email</button>
-        
-        <button class="cta-button" onclick="window.location.href='tel:+27768229333'">Call Now</button>
-        
-        <button class="cta-button" onclick="window.location.href='https://wa.me/2784843808'">Message on WhatsApp</button>
-    </div>
-</section>
+    <section id="contact">
+        <div class="wave-bg"></div>
+        <h2>Contact Rick Deazer</h2>
+        <p>Reach out directly for inquiries, enrollment, or to learn more about Relay Programming.</p>
+        <p><strong>Email:</strong> <a href="mailto:deazerrick@gmail.com" style="color: #00ffff; text-decoration: none;">deazerrick@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+27768229333" style="color: #00ffff; text-decoration: none;">076 822 9333</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/2784843808" style="color: #00ffff; text-decoration: none;">078 484 3808</a></p>
+        <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 20px; align-items: center;">
+            <button class="cta-button" onclick="window.location.href='mailto:deazerrick@gmail.com'">Send Email</button>
+            <button class="cta-button" onclick="window.location.href='tel:+27768229333'">Call Now</button>
+            <button class="cta-button" onclick="window.location.href='https://wa.me/2784843808'">Message on WhatsApp</button>
+        </div>
+    </section>
 
     <script>
         function scrollToSection(id) {
